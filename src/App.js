@@ -2,30 +2,33 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  // const [greet, setGreet] = useState("")
-  const [input_value,setInput_value] = useState("")
-  const [fact,setFact] = useState("0")
+    const items = [
+      {name : "Apple"},
+      {name : "Apple1"},
+      {name : "Apple2"},
+      {name : "Apple3"},
+      {name : "Apple4"}
+    ]
 
-  function factorial(){
-    let fact_local = 1
-    for(let i=1;i<=input_value;i++){
-      fact_local*=i
+    const [item,setItem] = useState("")
+    const [message,setMessage] = useState("")
+
+    function search(){
+      let hasitem = items.find(ele=>String(item).toLowerCase===String(ele.name).toLowerCase);
+      if(hasitem){
+        setMessage(item + " found in list")
+      }
+      else{
+        setMessage(item + " not found in list")
+      }
     }
-    setFact(fact_local)
-  }
+  
 
   return (
     <div className="App">
-      <input value={input_value} type='number' onChange={(e)=>{
-        setInput_value(e.target.value)
-        setFact("0")
-      }}/>
-      <button onClick={factorial}>Click here to calculate</button>
-      <input type='reset' onClick={(e)=>{
-        setFact("0")
-        setInput_value("")
-      }}/>
-      {fact!=0 && (<div>factorial of {input_value}: {fact}</div>)}
+      <input type='text' value={item} onChange={(e)=>{setItem(e.target.value)}}/>
+      <button onClick={search}>Search</button>
+      <div>{message}</div>
     </div>
   );
 }
