@@ -1,35 +1,21 @@
-import './App.css';
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/hoempage/homepage"
+import Login from "./components/login/login"
+import Display from "./components/display_blog/display"
+import Register from "./components/register/register"
+import Upload from "./components/upload_blog/upload"
 
 function App() {
-    const items = [
-      {name : "Apple"},
-      {name : "Apple1"},
-      {name : "Apple2"},
-      {name : "Apple3"},
-      {name : "Apple4"}
-    ]
-
-    const [item,setItem] = useState("")
-    const [message,setMessage] = useState("")
-
-    function search(){
-      let hasitem = items.find(ele=>String(item).toLowerCase===String(ele.name).toLowerCase);
-      if(hasitem){
-        setMessage(item + " found in list")
-      }
-      else{
-        setMessage(item + " not found in list")
-      }
-    }
-  
-
   return (
-    <div className="App">
-      <input type='text' value={item} onChange={(e)=>{setItem(e.target.value)}}/>
-      <button onClick={search}>Search</button>
-      <div>{message}</div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/Display" element={<Display/>}/>
+        <Route path="/Register" element={<Register/>}/>
+        <Route path="/Upload" element={<Upload/>}/>
+      </Routes>
+    </Router>
   );
 }
 
