@@ -1,0 +1,37 @@
+.HomeSearchBar{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.HomeSearchBarTitle{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 0.5px solid rgb(255, 133, 18);
+    border-radius: 10px;
+
+}
+
+.HomeSearchBar i{
+    font-size: 20px;
+}
+
+.HomeSearchBar input{
+    width: 50%;
+    font-size: 16px;
+    outline: none;
+    border: none;
+}
+
+.HomeQuestion{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

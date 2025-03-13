@@ -1,0 +1,46 @@
+.QuestionCardMain{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 30px;
+    background-color: rgb(180, 180, 180);
+    border-radius: 10px;
+}
+
+.QustionCardPostUserDiv{
+    display: flex;
+    margin: 0px 0px;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.QuestionPostUSer{
+    font-size: 15px;
+    color: rgb(77, 77, 77);
+}
+
+.QuestionCardTitle{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 3px 0px 8px 0px;
+}
+
+.QuestionSummuryDiv{
+    width: 1000px;
+    background-color: white;
+    height: 100px;
+    border-radius: 5px;
+    color: gray;
+    padding: 10px 20px;
+}
+
+.AnswerCount{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+}

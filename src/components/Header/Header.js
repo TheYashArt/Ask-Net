@@ -11,7 +11,7 @@ function Header(){
                 </div>
                 <div className='HButtons'>
                     <button onClick={()=>{navigate('/Login')}} className='HButtonLogin HButton'>Login</button>
-                    <button className='HButtonSignUp HButton'>Sign Up</button>
+                    <button onClick={()=>{navigate('/Register')}} className='HButtonSignUp HButton'>Sign Up</button>
                 </div>
             {/* </div> */}
         </div>
