@@ -1,12 +1,20 @@
 import './UserAccount.css';
 import { useState } from 'react';
 import UserProfile from '../UserProfile/UserProfile';
+import SavedQuestions from '../SavedQuestions/SavedQuestions';
+import QuestionCard from '../QuestionCard/QuestionCard';
+import QuestionsAnswered from '../QuestionsAnswered/QuestionsAnswered';
+import QuestionsAsked from '../QuestionsAsked/QuestionsAsked';
 
 function UserAccount(){
-    const [sideBarContent, setSideBarContent] = useState('');
-    const content = ["Profile", "Questions Asked", "Questions Answered", "Saved Questions", "FAQ"];
-    console.log(sideBarContent);
-
+    const [sideBarContent, setSideBarContent] = useState('Profile');
+    const content = ["Profile", "Questions Asked", "Questions Answered", "Saved Questions"];
+    const Questions = [
+        {Title:"Question 1", Summury : "This is Question One", Answers: 5},
+        {Title:"Question 2", Summury : "This is Question Two", Answers: 10},
+        {Title:"Question 3", Summury : "This is Question Three", Answers: 15},
+        {Title:"Question 4", Summury : "This is Question Four", Answers: 20},
+    ]
     // let rightmain = </>
     return(
         <div className='UserAccount'>
@@ -30,9 +38,23 @@ function UserAccount(){
                 })}
 
             </div>
+            <div className='UserAccountRightMain'>
+            <div className='HiddenDiv'></div>
                 <div className='UseAccountRightMainDiv'>
+                    <div>
                     {sideBarContent === 'Profile' && <UserProfile />}
+                    </div>
+                    <div>
+                    {sideBarContent==='Saved Questions' && <SavedQuestions/>}
+                    </div>
+                    <div>
+                    {sideBarContent==='Questions Answered' && <QuestionsAnswered/>}
+                    </div>
+                    <div>
+                    {sideBarContent==='Questions Asked' && <QuestionsAsked/>}
+                    </div>
                 </div>  
+            </div>
         </div>
     )
 }

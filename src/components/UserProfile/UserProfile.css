@@ -1,0 +1,54 @@
+.UserProfileImageDiv{
+    padding: 10px;
+}
+
+.UserProfileMainDiv{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.UserProfileDetailsDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.UserName{
+    margin: 10px 0px;
+    border: 0.5px solid gray;
+    padding: 5px ;
+    border-radius: 5px;
+}
+
+.UserNamelabel{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.UserNameInput{
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: black;
+    width: fit-content;
+
+}
+
+.UserProfileName{
+    display: flex;
+    gap: 40px;
+
+}
+
+
+.UserProfileQuestionsDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.QuestionAsked{
+    font-size: 18px;
+}

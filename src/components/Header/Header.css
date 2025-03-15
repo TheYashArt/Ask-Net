@@ -1,8 +1,10 @@
 .Header{
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
     padding: 10px 20px;
-    background-color: rgb(179, 161, 230);
+    background-color: rgb(65, 50, 109);
 }
 
 .HeaderName{

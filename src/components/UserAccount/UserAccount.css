@@ -3,18 +3,25 @@
     justify-content: flex-start;
     flex-direction: column;
     padding: 30px 10px 0px 10px ;
-    background-color: rgb(156,153,178);
+    background-color: rgb(156, 144, 170);
     height: 85vh;
     width: 250px;
+    position: fixed;
+    left: 0;
 
 }
 
 
-.UserAccount{
-    display: flex;
-    justify-content: flex-start;
+
+.HiddenDiv{
+    width: 300px;
 }
 
 .UseAccountRightMainDiv{
     padding: 40px 60px;
+}
+
+.UserAccountRightMain{
+    display: flex;
+    justify-content: flex-start;
 }

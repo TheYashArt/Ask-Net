@@ -1,9 +1,25 @@
 import './LandingPage.css';
 import Header from '../Header/Header';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
+import { useEffect, useState } from 'react';
 
 function LandingPage(){
     const naviagate = useNavigate()
+    useEffect(()=>{
+        getdbdata();
+    },[])
+
+    function getdbdata(){
+        axios.get('http://localhost:4200/UserInformaton')
+        .then(response=>{
+            console.log(response.data)
+        }).catch(err=>{
+            console.log(err.status)
+        })
+            
+    }
+    
     return(
         <div className="LandingPage">
             <div className='LPMainDiv'>
