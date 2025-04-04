@@ -1,0 +1,4 @@
+.QuestionDisplay{
+    display: grid;
+    place-content: center;
+}

@@ -12,7 +12,7 @@ function SavedQuestions(){
         <div className='SavedQuestionDiv'>
             {Questions.map((Question) => {
                 return <div className='SavedQuestion'>
-                    <QuestionCard summurywidth='800px' width='850px' Title={Question.Title} Summury={Question.Summury} AnswerCount={Question.Answers}/>
+                    <QuestionCard inUserAccount={true} summurywidth='800px' width='850px' Title={Question.Title} Summury={Question.Summury} AnswerCount={Question.Answers}/>
                 </div>
             })}
         </div>

@@ -1,31 +1,57 @@
-import './HomePage.css';
-import QuestionCard from '../QuestionCard/QuestionCard';
+import "./HomePage.css";
+import QuestionCard from "../QuestionCard/QuestionCard";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-function HomePage(){
-    const Questions = [
-        {Title:"Question 1", Summury : "This is Question One", Answers: 5},
-        {Title:"Question 2", Summury : "This is Question Two", Answers: 10},
-        {Title:"Question 3", Summury : "This is Question Three", Answers: 15},
-        {Title:"Question 4", Summury : "This is Question Four", Answers: 20},
-    ]
-    return(
-        <div className='HomePage'>
-            <div className='HomeSearchBar'>
-                <div className='HomeSearchBarTitle'>
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    <input type='text' placeholder='Search for questions' className='SearchBar'/>
-                </div>
-            </div>
+function HomePage() {
+  const [Questions, setQuestions] = useState([]);
 
-            <div className='HomeQuestions'>
-                {Questions.map((Question) => {
-                    
-                    return <div className='HomeQuestion'>
-                        <QuestionCard Title={Question.Title} Summury={Question.Summury} AnswerCount={Question.Answers}/>
-                    </div>
-                })}
-            </div>
+  useEffect(() => {
+    axios
+      .get("http://localhost:4200/Questions")
+      .then((response) => {
+        console.log(response.data);
+        setQuestions(response.data); 
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  return (
+    <div className="HomePage">
+      <div className="HomeSearchBar">
+        <div className="HomeSearchBarTitle">
+          <i className="fa fa-search" aria-hidden="true"></i>
+          <input
+            type="text"
+            placeholder="Search for questions"
+            className="SearchBar"
+          />
         </div>
-    )
+      </div>
+
+      <div className="HomeQuestions">
+        {Questions.length > 0 ? ( 
+          Questions.map((Question) => (
+            <div className="HomeQuestion" key={Question.id}>
+              <QuestionCard
+                summurywidth={"750px"}
+                width={"800px"}
+                Title={Question.QuestionTitle}
+                Summury={Question.QuestionDescription} 
+                AnswerCount={Question.Answers?.length || 0}
+                
+                
+              />
+            </div>
+          ))
+        ) : (
+          <p>Loading questions...</p> // Display a loading message while data is being fetched
+        )}
+      </div>
+    </div>
+  );
 }
+
 export default HomePage;

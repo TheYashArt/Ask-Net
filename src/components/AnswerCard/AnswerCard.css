@@ -1,0 +1,26 @@
+.AnswerCardMainDiv{
+    padding: 10px 20px;
+    background-color: rgb(180, 180, 180);
+    width: fit-content;
+    border-radius: 5px;
+    
+}
+.MainAnswer{
+    padding: 10px 20px;
+    width: 650px;
+    background-color: white;
+    margin: 10px 0px;
+    border-radius: 5px;
+    height: fit-content;
+
+}
+
+.UploadedBy{
+    display: flex;
+    margin: 0px 0px;
+    width: 700px;
+    gap: 10px;
+    font-weight: 600;
+    text-align: center;
+    align-items: center;
+}

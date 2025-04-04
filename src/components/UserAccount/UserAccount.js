@@ -1,5 +1,5 @@
 import './UserAccount.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import UserProfile from '../UserProfile/UserProfile';
 import SavedQuestions from '../SavedQuestions/SavedQuestions';
 import QuestionCard from '../QuestionCard/QuestionCard';
@@ -7,15 +7,16 @@ import QuestionsAnswered from '../QuestionsAnswered/QuestionsAnswered';
 import QuestionsAsked from '../QuestionsAsked/QuestionsAsked';
 
 function UserAccount(){
+    const [userd, setUserd] = useState()
+    useEffect(()=>{
+        setUserd(JSON.parse(localStorage.getItem('user')));
+        console.log("userd from userAccount"+userd)
+    },[])
+
+
+
     const [sideBarContent, setSideBarContent] = useState('Profile');
     const content = ["Profile", "Questions Asked", "Questions Answered", "Saved Questions"];
-    const Questions = [
-        {Title:"Question 1", Summury : "This is Question One", Answers: 5},
-        {Title:"Question 2", Summury : "This is Question Two", Answers: 10},
-        {Title:"Question 3", Summury : "This is Question Three", Answers: 15},
-        {Title:"Question 4", Summury : "This is Question Four", Answers: 20},
-    ]
-    // let rightmain = </>
     return(
         <div className='UserAccount'>
             <div className='UserAccountSideBar'>
@@ -42,16 +43,16 @@ function UserAccount(){
             <div className='HiddenDiv'></div>
                 <div className='UseAccountRightMainDiv'>
                     <div>
-                    {sideBarContent === 'Profile' && <UserProfile />}
+                    {sideBarContent === 'Profile' && <UserProfile userInfo = {userd} />}
                     </div>
                     <div>
-                    {sideBarContent==='Saved Questions' && <SavedQuestions/>}
+                    {sideBarContent==='Saved Questions' && <SavedQuestions userInfo = {userd}/>}
                     </div>
                     <div>
-                    {sideBarContent==='Questions Answered' && <QuestionsAnswered/>}
+                    {sideBarContent==='Questions Answered' && <QuestionsAnswered userInfo = {userd}/>}
                     </div>
                     <div>
-                    {sideBarContent==='Questions Asked' && <QuestionsAsked/>}
+                    {sideBarContent==='Questions Asked' && <QuestionsAsked userInfo = {userd} />}
                     </div>
                 </div>  
             </div>

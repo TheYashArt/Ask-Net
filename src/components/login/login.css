@@ -17,6 +17,12 @@ label{
 
 }
 
+.erromsg{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
 .LoginBlock{
     background-color: rgb(224, 224, 224);
     padding: 10px 5px;

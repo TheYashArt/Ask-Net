@@ -7,7 +7,11 @@ import HomePage from '../HomePage/HomePage';
 import UserAccount from '../UserAccount/UserAccount';
 import SavedQuestions from '../SavedQuestions/SavedQuestions';
 import Register from '../Register/Register';
+import QuestionUpload from '../QuestionUpload/QuestionUpload';
+import QuestionDisplay from '../QuestionDisplay/QuestionDisplay';
+import AnswerCard from '../AnswerCard/AnswerCard';
 import Header from '../Header/Header';
+import AnswerUpload from '../AnswerUpload/AnswerUpload';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 function App() {
   return (
@@ -18,11 +22,15 @@ function App() {
           <Route path='/Header' element={<Header />} />
           <Route path='/Login' element={<Login />} />
           <Route path='/HomePage' element={<HomePage />} />
+          <Route path='/AnswerCard' element={<AnswerCard/>}/>
           <Route path='/QuestionsAnswered' element={<QuestionsAnswered/>}/>
           <Route path='/QuestionCard' element={<QuestionCard />} />
           <Route path='/UserAccount' element={<UserAccount />} />
           <Route path='/Register' element={<Register />} />
           <Route path='/SavedQuestions' element={<SavedQuestions />} />
+          <Route path='/QuestionUpload' element={<QuestionUpload/>}/>
+          <Route path='/QuestionDisplay' element={<QuestionDisplay/>}/>
+          <Route path='/AnswerUpload' element={<AnswerUpload/>}/>
         </Routes>
       </BrowserRouter>
   );

@@ -7,8 +7,7 @@ function Register(){
     const Navigate = useNavigate()
     const [registerInformation,setRegisterInformation]= useState({
         UserName : "",
-        Password : "",
-        ConfirmPassword : ""
+        Password : ""
     })
 
     const handlechange=(event)=>{
@@ -20,6 +19,7 @@ function Register(){
 
     function display(){
         setDataToDB()
+        Navigate("/Login")
         console.log(registerInformation)
         
     }

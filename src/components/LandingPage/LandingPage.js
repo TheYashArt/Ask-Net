@@ -1,11 +1,11 @@
 import './LandingPage.css';
 import Header from '../Header/Header';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 
 function LandingPage(){
-    const naviagate = useNavigate()
+    const navigate = useNavigate()
     useEffect(()=>{
         getdbdata();
     },[])
@@ -30,7 +30,7 @@ function LandingPage(){
                     </div>
                     <div className='LPPostDiv'>
                         <div className='LPPostContent'>
-                            <button className='LPPostButton'>Post a Question</button>
+                            <button className='LPPostButton' onClick={()=>{navigate("/QuestionUpload")}}>Post a Question</button>
                         </div>
                     </div>
                 </div>
